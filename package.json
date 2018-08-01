@@ -1,0 +1,60 @@
+{
+    "name": "vscode-swan",
+    "displayName": "vscode-swan",
+    "description": "Vscode plugin for baidu smartapp",
+    "version": "0.0.1",
+    "publisher": "zhuyeqing",
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "icon": "res/icon.png",
+    "categories": [
+        "Programming Languages",
+        "Snippets",
+        "Other"
+    ],
+    "activationEvents": [
+        "workspaceContains:project.swan.json",
+        "onLanguage:swan"
+    ],
+    "main": "./src/extension",
+    "contributes": {
+        "commands": [],
+        "languages": [
+            {
+                "id": "swan",
+                "extensions": [
+                    ".swan"
+                ],
+                "aliases": [
+                    "swan"
+                ],
+                "configuration": "./res/swan.language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "swan",
+                "scopeName": "text.html.swan",
+                "path": "./syntaxes/swan.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "swan",
+                "path": "./snippets/swan.json"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.43",
+        "eslint": "^4.11.0",
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.18"
+    }
+}
