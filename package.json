@@ -3,7 +3,8 @@
     "displayName": "vscode-swan",
     "description": "Vscode plugin for baidu smartapp",
     "version": "0.0.1",
-    "publisher": "zhuyeqing",
+    "publisher": "efe-blue",
+    "repository": "efe-blue/vscode-swan",
     "engines": {
         "vscode": "^1.25.0"
     },
@@ -14,8 +15,7 @@
         "Other"
     ],
     "activationEvents": [
-        "workspaceContains:project.swan.json",
-        "onLanguage:swan"
+        "*"
     ],
     "main": "./src/extension",
     "contributes": {
