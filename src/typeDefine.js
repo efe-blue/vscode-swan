@@ -24,7 +24,7 @@ function copyFile(typingsDestDir) {
     });
 }
 
-function createTypeDefinition() {
+module.exports = () => {
     let typingsDestDir = path.join(vscode.workspace.rootPath, 'typings');
     if (fs.existsSync(typingsDestDir)) {
         return copyFile(typingsDestDir);
@@ -36,6 +36,4 @@ function createTypeDefinition() {
         }
         return copyFile(typingsDestDir);
     });
-}
-
-module.exports = createTypeDefinition;
+};

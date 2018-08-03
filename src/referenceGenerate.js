@@ -1,5 +1,5 @@
 /**
- * @file js configuration
+ * @file reference generation
  * @author zhuyeqing
  */
 const path = require('path');
@@ -13,8 +13,7 @@ const vscode = require('vscode');
 const referenceSrcFile = path.join(__dirname, '../swan.d.ts');
 const referenceDestFile = path.join(vscode.workspace.rootPath, 'swan.d.ts');
 
-function generateReference() {
-    return fs.readFile(referenceSrcFile, (err, data) => {
+module.exports = () => fs.readFile(referenceSrcFile, (err, data) => {
         if (err) {
             vscode.window.showErrorMessage(`读取swan.d.ts配置文件失败: ${err}`);
         }
@@ -24,5 +23,3 @@ function generateReference() {
             }
         });
     });
-}
-module.exports = generateReference;
