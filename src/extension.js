@@ -1,5 +1,5 @@
 /**
- * @file 入口
+ * @file entry
  * @author zhuyeqing
  */
 

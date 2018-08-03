@@ -8,7 +8,9 @@ const fs = require('fs');
 const vscode = require('vscode');
 
 const typeDefine = require('./typeDefine');
-const referenceGenerate = require('./referenceGenerate');
+const jsConfigure = require('./jsConfigure');
+const gitignoreAdd = require('./gitignoreAdd');
+
 
 module.exports = () => {
     // 工作目录读取失败时，不支持 api 提示
@@ -25,6 +27,8 @@ module.exports = () => {
         // 安装swan.d.ts
         typeDefine(),
         // 创建swan.d.ts启动方式
-        referenceGenerate()
+        jsConfigure(),
+        // 添加.gitignore
+        gitignoreAdd('typings\n')
     ]);
 };
