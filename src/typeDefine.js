@@ -13,12 +13,12 @@ function copyFile(typingsDestDir) {
 
     return fs.readFile(typingsSrcFile, (err, data) => {
         if (err) {
-            vscode.window.showErrorMessage(`读取swan.d.ts文件失败: ${err}`);
+            return;
         }
 
         fs.writeFile(typingsDestFile, data, err => {
             if (err) {
-                vscode.window.showErrorMessage(`复制swan.d.ts文件失败: ${err}`);
+                return;
             }
         });
     });
@@ -32,7 +32,7 @@ module.exports = () => {
 
     return fs.mkdir(typingsDestDir, err => {
         if (err) {
-            vscode.window.showErrorMessage(`创建typings文件夹失败: ${err}`);
+            return;
         }
         return copyFile(typingsDestDir);
     });
