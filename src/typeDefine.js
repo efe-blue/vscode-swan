@@ -8,18 +8,20 @@ const fs = require('fs');
 const vscode = require('vscode');
 
 function copyFile(typingsDestDir) {
-    let typingsSrcFile = path.join(__dirname, '../res/typings/swan.d.ts');
-    let typingsDestFile = path.join(typingsDestDir, 'swan.d.ts');
+    new Promise((resolve, reject) => {
+        let typingsSrcFile = path.join(__dirname, '../res/typings/swan.d.ts');
+        let typingsDestFile = path.join(typingsDestDir, 'swan.d.ts');
 
-    return fs.readFile(typingsSrcFile, (err, data) => {
-        if (err) {
-            return;
-        }
-
-        fs.writeFile(typingsDestFile, data, err => {
+        return fs.readFile(typingsSrcFile, (err, data) => {
             if (err) {
-                return;
+                reject();
             }
+            fs.writeFile(typingsDestFile, data, err => {
+                if (err) {
+                    reject();
+                }
+                resolve();
+            });
         });
     });
 }
@@ -30,10 +32,12 @@ module.exports = () => {
         return copyFile(typingsDestDir);
     }
 
-    return fs.mkdir(typingsDestDir, err => {
+    fs.mkdir(typingsDestDir, err => {
         if (err) {
-            return;
+            return Promise.reject();
         }
         return copyFile(typingsDestDir);
     });
 };
+
+

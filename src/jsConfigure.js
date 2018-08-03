@@ -8,8 +8,14 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = () => {
-    let jsConfigDestFile = path.join(vscode.workspace.rootPath, 'jsconfig.json');
-    return fs.open(jsConfigDestFile, 'a', (err, fd) => {
-        fs.closeSync(fd);
-    });
+    new Promise((resolve, reject) => {
+            let jsConfigDestFile = path.join(vscode.workspace.rootPath, 'jsconfig.json');
+            fs.open(jsConfigDestFile, 'a', (err, fd) => {
+                if (err) {
+                    reject();
+                }
+                fs.closeSync(fd);
+                resolve();
+            });
+        });
 };

@@ -11,19 +11,20 @@ const vscode = require('vscode');
  * 为.gitignore增加文件或者文件夹
  *
  * @param {string} data 添加到.gitignore中的文件或者文件夹
- * @return {Object}
+ * @return {Promise<null>} promise
  */
-module.exports = data => {
+module.exports = data => new Promise((resolve, reject) => {
     let gitignorePath = path.join(vscode.workspace.rootPath, '.gitignore');
-    return fs.open(gitignorePath, 'r+', (err, fd) => {
+    fs.open(gitignorePath, 'r+', (err, fd) => {
         if (err) {
-            return;
+            reject();
         }
         fs.write(fd, data, err => {
             if (err) {
-                return;
+                reject();
             }
             fs.closeSync(fd);
+            resolve();
         });
     });
-};
+});
