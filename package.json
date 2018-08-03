@@ -2,7 +2,7 @@
     "name": "vscode-swan",
     "displayName": "vscode-swan",
     "description": "Vscode plugin for baidu smartapp",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "efe-blue",
     "repository": "efe-blue/vscode-swan",
     "engines": {
