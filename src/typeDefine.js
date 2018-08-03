@@ -8,7 +8,7 @@ const fs = require('fs');
 const vscode = require('vscode');
 
 function copyFile(typingsDestDir) {
-    new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         let typingsSrcFile = path.join(__dirname, '../res/typings/swan.d.ts');
         let typingsDestFile = path.join(typingsDestDir, 'swan.d.ts');
 
