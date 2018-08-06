@@ -10,6 +10,7 @@ const vscode = require('vscode');
 const defineType = require('./defineType');
 const addJsconfig = require('./addJsconfig');
 const addGitignore = require('./utils/addGitignore');
+const getConfig = require('./utils/getConfig');
 
 
 module.exports = () => {
@@ -23,12 +24,15 @@ module.exports = () => {
         return Promise.reject();
     }
 
-    return Promise.all([
-        // 安装swan.d.ts
-        defineType(),
-        // 创建swan.d.ts启动方式
-        addJsconfig(),
-        // 添加.gitignore
-        addGitignore('typings\n')
-    ]);
+    // 用户未禁用API智能提示功能
+    if (!getConfig('disableAPISuggestion', false)) {
+        return Promise.all([
+            // 安装swan.d.ts
+            defineType(),
+            // 创建swan.d.ts启动方式
+            addJsconfig(),
+            // 添加.gitignore
+            addGitignore('typings\n')
+        ]);
+    }
 };
