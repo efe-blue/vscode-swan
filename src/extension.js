@@ -3,10 +3,10 @@
  * @author zhuyeqing
  */
 
-const apiSuggest = require('./apiSuggest');
+const suggestApi = require('./suggestApi');
 
 exports.activate = () => {
-    apiSuggest();
+    suggestApi();
 };
 
 exports.deactivate = () => {};
