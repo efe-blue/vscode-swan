@@ -24,7 +24,7 @@ module.exports = () => {
         return Promise.reject();
     }
 
-    // 用户未禁用API智能提示功能
+    // 用户未禁用 api 提示
     if (!getConfig('disableAPISuggestion', false)) {
         return Promise.all([
             // 安装swan.d.ts
@@ -35,4 +35,7 @@ module.exports = () => {
             addGitignore('typings\n')
         ]);
     }
+
+    // 用户禁用了 api 提示
+    return Promise.reject();
 };
