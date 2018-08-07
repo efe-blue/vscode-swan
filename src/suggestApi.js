@@ -10,7 +10,7 @@ const vscode = require('vscode');
 const defineType = require('./defineType');
 const addJsconfig = require('./addJsconfig');
 const addGitignore = require('./utils/addGitignore');
-const getConfig = require('./utils/getConfig');
+const getUserConfig = require('./utils/getUserConfig');
 
 
 module.exports = () => {
@@ -26,7 +26,7 @@ module.exports = () => {
     }
 
     // 用户禁用了 api 提示
-    if (getConfig('disableAPISuggestion')) {
+    if (getUserConfig('disableAPISuggestion')) {
         return Promise.reject();
     }
 
