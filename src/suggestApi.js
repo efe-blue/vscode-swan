@@ -3,13 +3,14 @@
  * @author varsha
  */
 
-const path = require('path');
 const fs = require('fs');
+const path = require('path');
 const vscode = require('vscode');
 
-const typeDefine = require('./typeDefine');
-const jsConfigure = require('./jsConfigure');
-const gitignoreAdd = require('./gitignoreAdd');
+const defineType = require('./defineType');
+const addJsconfig = require('./addJsconfig');
+const addGitignore = require('./utils/addGitignore');
+const getUserConfig = require('./utils/getUserConfig');
 
 
 module.exports = () => {
@@ -17,18 +18,25 @@ module.exports = () => {
     if (!vscode.workspace.rootPath) {
         return Promise.reject();
     }
+
     // 工作根目录下没有 project.swan.json 认为不是小程序项目，不支持 api 提示
     let jsonFilePath = path.join(vscode.workspace.rootPath, 'project.swan.json');
     if (!fs.existsSync(jsonFilePath)) {
         return Promise.reject();
     }
 
+    // 用户禁用了 api 提示
+    if (getUserConfig('disableAPISuggestion')) {
+        return Promise.reject();
+    }
+
+    // 用户未禁用 api 提示
     return Promise.all([
         // 安装swan.d.ts
-        typeDefine(),
+        defineType(),
         // 创建swan.d.ts启动方式
-        jsConfigure(),
+        addJsconfig(),
         // 添加.gitignore
-        gitignoreAdd('typings\n')
+        addGitignore('typings\n')
     ]);
 };

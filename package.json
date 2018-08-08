@@ -2,7 +2,7 @@
     "name": "vscode-swan",
     "displayName": "vscode-swan",
     "description": "Vscode plugin for baidu smartapp",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "publisher": "efe-blue",
     "repository": "efe-blue/vscode-swan",
     "engines": {
@@ -14,11 +14,28 @@
         "Snippets",
         "Other"
     ],
+    "keywords": [
+        "swan",
+        "vscode-swan",
+        "小程序"
+    ],
     "activationEvents": [
         "*"
     ],
     "main": "./src/extension",
     "contributes": {
+        "configuration":[
+            {
+                "title": "vscode-swan",
+                "properties": {
+                    "vscode-swan.disableAPISuggestion": {
+                        "type": "boolean",
+                        "description": "禁用API智能提示功能（这个功能将引入文件夹typings以及jsconfig.json文件），将在下次打开vscode时生效",
+                        "default": false
+                    }
+                }
+            }
+        ],
         "commands": [],
         "languages": [
             {
