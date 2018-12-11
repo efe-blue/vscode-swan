@@ -6,7 +6,8 @@
 const suggestApi = require('./suggestApi');
 
 exports.activate = () => {
-    suggestApi();
+    console.log('in');
+    // suggestApi();
 };
 
 exports.deactivate = () => {};
