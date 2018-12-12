@@ -49,14 +49,14 @@
                 "configuration": "./res/swan.language-configuration.json"
             },
             {
-                "id": "vue",
+                "id": "okm",
                 "extensions": [
                     ".vue"
                 ],
                 "aliases": [
-                    "vue"
+                    "okm"
                 ],
-                "configuration": "./res/vue.language-configuration.json"
+                "configuration": "./res/okm.language-configuration.json"
             }
         ],
         "grammars": [
@@ -66,15 +66,27 @@
                 "path": "./syntaxes/swan.tmLanguage.json"
             },
             {
-                "language": "vue",
-                "scopeName": "text.html.vue",
-                "path": "./syntaxes/vue.tmLanguage.json"
+                "language": "okm",
+                "scopeName": "text.html.okm",
+                "path": "./syntaxes/okm.tmLanguage.json"
             }
         ],
         "snippets": [
             {
                 "language": "swan",
                 "path": "./snippets/swan.json"
+            },
+            {
+                "language": "okm",
+                "path": "./snippets/okm-base.json"
+            },
+            {
+                "language": "okm",
+                "path": "./snippets/okm-template.json"
+            },
+            {
+                "language": "okm",
+                "path": "./snippets/okm-script.json"
             }
         ]
     },

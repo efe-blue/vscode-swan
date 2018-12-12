@@ -1,0 +1,63 @@
+{
+    "okm-single-doc": {
+        "prefix": "okm",
+        "body": [
+            "<template>",
+            "\t<view></view>",
+            "</template>",
+            "<script>",            
+            "\texport default {",
+            "\t\tconfig: {",
+            "\t\t\t$0",
+            "\t\t}",        
+            "\t\tcomponents: {",
+            "\t\t}",
+            "\t\tdata: {",
+            "\t\t}",           
+            "\t\tmethods: {",
+            "\t\t}",
+            "\t}",
+            "</script>",
+            "<style lang=\"stylus\">",
+            "</style>"
+        ],
+        "description": "okam single document component"
+    },
+    "okm-template": {
+        "prefix": "template",
+        "body": [
+            "<template>",
+            "\t<view $1>$0</view>",
+            "</template>"
+        ],
+        "description": "template element"
+    },
+    "okm-script": {
+        "prefix": "script",
+        "body": [
+            "<script>",            
+            "\texport default {",
+            "\t\tconfig: {",
+            "\t\t\t$0",
+            "\t\t}",        
+            "\t\tcomponents: {",
+            "\t\t}",
+            "\t\tdata: {",
+            "\t\t}",           
+            "\t\tmethods: {",
+            "\t\t}",
+            "\t}",
+            "</script>"
+        ],
+        "description": "script element"
+    },
+    "okm-style": {
+        "prefix": "style",
+        "body": [
+            "<style lang=\"stylus\">",
+            "\t$0",
+            "</style>"
+        ],
+        "description": "style element"
+    }
+}

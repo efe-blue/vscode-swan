@@ -1,0 +1,62 @@
+{
+    "if": {
+        "prefix": "if",
+        "body": "if=\"$1\"$0"
+    },
+    "else-if": {
+        "prefix": "elif",
+        "body": "elif=\"$1\"$0"
+    },
+    "else": {
+        "prefix": "else",
+        "body": "else"
+    },
+    "for": {
+        "prefix": "for",
+        "body": "for=\"$1\"$0"
+    },
+    ":key": {
+        "prefix": ":key",
+        "body": ":key=\"$1\"$0",
+        "description": "微信小程序中指定列表中项目的唯一的标识符"
+    },
+    "class": {
+        "prefix": "class",
+        "body": "class=\"$1\"$0"
+    },
+    ":class": {
+        "prefix": ":class",
+        "body": ":class=\"$1\"$0"
+    },
+    "style": {
+        "prefix": "style",
+        "body": "style=\"$1\"$0"
+    },
+    ":style": {
+        "prefix": ":style",
+        "body": ":style=\"$1\"$0"
+    },
+    "bindclick": {
+        "prefix": "@click",
+        "body": "@click=\"$1\"$0"
+    },
+    "bindtap": {
+        "prefix": "@tap",
+        "body": "@tap=\"$1\"$0"
+    },
+    "import-template": {
+        "prefix": "import",
+        "body": "<import src=\"$0\" />",
+        "description": "模板复用-import"
+    },
+    "tpl": {
+        "prefix": "tpl",
+        "body": " <tpl is=\"$1\" :data=\"$0\" />",
+        "description": "模板复用-模板"
+    },
+    "include": {
+        "prefix": "include",
+        "body": "<include :from=\"$1\" src=\"$0\" />",
+        "description": "模板复用-include"
+    }
+}
