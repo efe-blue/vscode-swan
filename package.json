@@ -82,6 +82,10 @@
             },
             {
                 "language": "okm",
+                "path": "./snippets/swan.json"
+            },
+            {
+                "language": "okm",
                 "path": "./snippets/okm-template.json"
             },
             {
