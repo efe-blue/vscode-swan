@@ -51,7 +51,7 @@
             {
                 "id": "okm",
                 "extensions": [
-                    ".vue"
+                    ".okm"
                 ],
                 "aliases": [
                     "okm"
