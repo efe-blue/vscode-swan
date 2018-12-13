@@ -3,12 +3,11 @@
         "prefix": "okm",
         "body": [
             "<template>",
-            "\t<view></view>",
+            "\t<view>$0</view>",
             "</template>",
             "<script>",            
             "\texport default {",
             "\t\tconfig: {",
-            "\t\t\t$0",
             "\t\t}",        
             "\t\tcomponents: {",
             "\t\t}",
@@ -27,7 +26,7 @@
         "prefix": "template",
         "body": [
             "<template>",
-            "\t<view $1>$0</view>",
+            "\t<view>$0</view>",
             "</template>"
         ],
         "description": "template element"
@@ -37,14 +36,13 @@
         "body": [
             "<script>",            
             "\texport default {",
-            "\t\tconfig: {",
-            "\t\t\t$0",
+            "\t\tconfig: {$1",
             "\t\t}",        
-            "\t\tcomponents: {",
+            "\t\tcomponents: {$2",
             "\t\t}",
-            "\t\tdata: {",
+            "\t\tdata: {$3",
             "\t\t}",           
-            "\t\tmethods: {",
+            "\t\tmethods: {$0",
             "\t\t}",
             "\t}",
             "</script>"
