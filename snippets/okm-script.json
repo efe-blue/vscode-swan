@@ -1,0 +1,155 @@
+{
+    "import": {
+        "prefix": "import",
+        "body": "import $1 from '$2';$0"
+    },
+    "computed": {
+        "prefix": "computed",
+        "body": [
+            "computed: {",
+            "\t$0",
+            "}"
+        ],
+        "description": "计算属性"
+    },
+    "beforeCreate": {
+        "prefix": "beforeCreate",
+        "body": [
+            "beforeCreate() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "onLoad 前期"
+    },
+    "created": {
+        "prefix": "created",
+        "body": [
+            "created() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "onLoad 后期"
+    },
+    "beforeMount": {
+        "prefix": "beforeMount",
+        "body": [
+            "beforeMount() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "onReady 前期"
+    },
+    "mounted": {
+        "prefix": "mounted",
+        "body": [
+            "mounted() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "onReady 后期"
+    },
+    "beforeUpdate": {
+        "prefix": "beforeUpdate",
+        "body": [
+            "beforeUpdate() {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "updated": {
+        "prefix": "updated",
+        "body": [
+            "updated() {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "activated": {
+        "prefix": "activated",
+        "body": [
+            "activated() {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "deactivated": {
+        "prefix": "deactivated",
+        "body": [
+            "deactivated() {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "beforeDestroy": {
+        "prefix": "beforeDestroy",
+        "body": [
+            "beforeDestroy() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "onUnload 前期"
+    },
+    "destroyed": {
+        "prefix": "destroyed",
+        "body": [
+            "destroyed() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "onUnload 后期"
+    },
+    "onShow": {
+        "prefix": "onShow",
+        "body": [
+            "onShow() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "页面显示"
+    },
+    "onHide": {
+        "prefix": "onHide",
+        "body": [
+            "onHide() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "页面隐藏"
+    },
+    "onPullDownRefresh": {
+        "prefix": "onPullDownRefresh",
+        "body": [
+            "onPullDownRefresh() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "下拉刷新"
+    },
+    "onReachBottom": {
+        "prefix": "onReachBottom",
+        "body": [
+            "onReachBottom() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "上拉触底"
+    },
+    "onPageScroll": {
+        "prefix": "onPageScroll",
+        "body": [
+            "onPageScroll() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "页面滚动"
+    },
+    "onShareAppMessage": {
+        "prefix": "onShareAppMessage",
+        "body": [
+            "onShareAppMessage() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "用户点击分享"
+    }
+}

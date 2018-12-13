@@ -16,6 +16,7 @@
     ],
     "keywords": [
         "swan",
+        "okam",
         "vscode-swan",
         "小程序"
     ],
@@ -47,6 +48,16 @@
                     "swan"
                 ],
                 "configuration": "./res/swan.language-configuration.json"
+            },
+            {
+                "id": "okm",
+                "extensions": [
+                    ".okm"
+                ],
+                "aliases": [
+                    "okm"
+                ],
+                "configuration": "./res/okm.language-configuration.json"
             }
         ],
         "grammars": [
@@ -54,12 +65,33 @@
                 "language": "swan",
                 "scopeName": "text.html.swan",
                 "path": "./syntaxes/swan.tmLanguage.json"
+            },
+            {
+                "language": "okm",
+                "scopeName": "text.html.okm",
+                "path": "./syntaxes/okm.tmLanguage.json"
             }
         ],
         "snippets": [
             {
                 "language": "swan",
                 "path": "./snippets/swan.json"
+            },
+            {
+                "language": "okm",
+                "path": "./snippets/okm-base.json"
+            },
+            {
+                "language": "okm",
+                "path": "./snippets/swan.json"
+            },
+            {
+                "language": "okm",
+                "path": "./snippets/okm-template.json"
+            },
+            {
+                "language": "okm",
+                "path": "./snippets/okm-script.json"
             }
         ]
     },
